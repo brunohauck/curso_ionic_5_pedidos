@@ -1,0 +1,34 @@
+  <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Delivery 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/shapes.svg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>Bem vido ao App de Delivery</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Escolha seu restaurante de sua preferência. Você pesquisar seu restaurante na barra de pesquisa</p>
+    </ion-card-content>
+  </ion-card>
+  <br /><br />
+  <ion-card *ngFor='let restaurant of restaurants' (click)="seleciona(restaurant)"  class="welcome-card">
+    <ion-img src="{{ restaurant.imgurl }}"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>{{ restaurant.telefone }}</ion-card-subtitle>
+      <ion-card-title>{{ restaurant.nome }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Endereço: {{ restaurant.endereco }} </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
